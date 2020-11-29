@@ -1,15 +1,22 @@
 from random import randint as random
-from Project_Package.CardGame import CardGame as c
+from Project_Package.CardGame import CardGame
+from Project_Package.card import DeckOfCards
+
+c = CardGame()  # creating an instance of cardgame class to take the card number for each player from there (second line down here as well)
+
 
 class Player:
-    def __init__(self, name, NumOfCards = 10):  #מאתחל את האובייקט ב10 קלפים בתור ברירת מחדל ובשם
-        self.NumOfCards = NumOfCards  # לא יכול להיות גדול מ26, להוסיף אחרי זה
+    number_of_cards = c.NumOfCards  # לא יכול להיות גדול מ26, להוסיף אחרי זה
+    def __init__(self, name, number_of_cards):  #מאתחל את האובייקט ב10 קלפים בתור ברירת מחדל ובשם
+        self.NumOfCards = number_of_cards
         self.cardList = []  # The list of card objects
         self.PlayerName = name
 
-    def set_hand(self):
+    def set_hand(self, deck_cards):
+        d = DeckOfCards()  # creating an instance of DeckOfCards game to give the player cards from the deck
+        card_deck = d.deck # Adding the card deck from DeckOfCards class to a local variable to use and give cards to the player
         for i in range(self.NumOfCards):
-            self.cardList += [random(1, 13)]  # Adds a random card number to the player deck card, Value 1 to 13 both included
+            self.cardList += [card_deck[random(1, len(deck_cards))]]  # Adds a random card number to the player deck card from deck Card local variable instance we created
         print(self.cardList)
 
     def get_card(self):

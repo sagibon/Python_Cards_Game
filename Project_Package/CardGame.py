@@ -6,7 +6,7 @@ class CardGame:
         self.player2 = None
         self.cardDeck = []
         for card in range(self.NumOfCards*2):  # Intializing a deck card for both players, that why we multiply by 2
-            self.CardDeck += card  # 1 card deck object for this class,
+            self.cardDeck += card  # 1 card deck object for this class,
 
     def new_game(self):
         self.flag += 1  # Method callable once, I raise a flag and return it to check later if the method has been called
