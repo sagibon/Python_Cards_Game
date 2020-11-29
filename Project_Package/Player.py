@@ -1,5 +1,5 @@
 from random import randint as random
-from PythonWarCardGames.CardGame import CardGame as c
+from Project_Package.CardGame import CardGame as c
 
 class Player:
     def __init__(self, name, NumOfCards = 10):  #מאתחל את האובייקט ב10 קלפים בתור ברירת מחדל ובשם

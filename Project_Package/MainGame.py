@@ -1,5 +1,5 @@
-from PythonWarCardGames.Player import Player
-from PythonWarCardGames.CardGame import CardGame
+from Project_Package.Player import Player
+from Project_Package.CardGame import CardGame
 
 player1 = Player('SAGI')
 player2 = Player('ADI')
