@@ -6,8 +6,10 @@ DeckClass = DeckOfCards()
 MainDeck = DeckClass.deck
 player1 = Player('SAGI')
 player2 = Player('ADI')
-player1.set_hand(MainDeck)  # Giving random cards to each player from the deck
-player2.set_hand(MainDeck)  # Giving random cards to each player from the deck
+Game1 = CardGame(player1.PlayerName, player2.PlayerName, 5)
+
+"""player1.set_hand(MainDeck)  # Giving random cards to each player from the deck
+player2.set_hand(MainDeck)  # Giving random cards to each player from the deck"""
 player1.show()    # Show return the details of a player
 player2.show()    # Show return the details of a player
 
