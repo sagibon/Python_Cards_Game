@@ -1,6 +1,8 @@
 import random
 
-
+"""def __eq__(self, other):
+    if self.Card > other.Card:  # need to make a function that handles comparison of card objects outside card class
+            return self"""
 class Card:
     def __init__(self, value, suit):  # 1 זה אס (הכי גבוה) ואז כרגיל 2-13 (11-נסיך, 12-מלכה, 13-מלך)
         self.value = value  # נותן ערך הקלף
@@ -8,6 +10,9 @@ class Card:
 
     def __repr__(self):
         return f"value: {self.value}, suit: {self.suit}"
+
+
+
 
     def who_higher(self, card2):  # הבדיקה של איזה קלף יותר חזק
         """אני רוצה לעשות כאן השוואה יותר חכמה, אבל עדיין לא יודע אם זה באמת יותר חכם. צריך לבדוק את העניין. (עם ___eq___ וזה)"""
