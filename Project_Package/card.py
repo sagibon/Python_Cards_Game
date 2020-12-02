@@ -42,8 +42,12 @@ class DeckOfCards:
     def shuffle(self):  # מתודה שמערבבת את החפיסה
         random.shuffle(self.deck)
 
-    def deal_one(self):  # מתודה שמוציאה קלף רנדומלי מהחפיסה ומחזירה אותו פנימה
-        return random.choice(self.deck)
+    def deal_one(self, deck=0):  # מתודה שמוציאה קלף רנדומלי מהחפיסה ומחזירה אותו פנימה
+        if type(deck) is list:
+            self.deck = deck
+        a = random.choice(self.deck)
+        self.deck.remove(a)
+        return a
 
     def show(self):  # מתודה שמדפיסה את החפיסה
         print(self.deck)
