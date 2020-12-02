@@ -23,10 +23,10 @@ class CardGame:
 
     def get_winner(self):  # whoever has the less card amount will win
 
-        if len(self.player1list) < len(self.player2list):  # if player 1 has less cards returns him as the winner
+        if len(self.player1.cardList) < len(self.player2.cardList):  # if player 1 has less cards returns him as the winner
             return self.player1
 
-        elif len(self.player1list) > len(self.player2list):  # if player 1 has less cards returns him as the winner
+        elif len(self.player1.cardList) > len(self.player2.cardList):  # if player 1 has less cards returns him as the winner
             return self.player2
 
         else:  # if they have an equal amount of cards returns None

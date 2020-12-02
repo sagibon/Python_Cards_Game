@@ -22,16 +22,7 @@ for round in range(10):
     Card2 = player2.get_card()  # getting a random card from the player2 deck
 
     print(f"First player's card:{Card1}      Second player's card:{Card2}")
-    Card1.who_higher(Card2)
+    Card1.who_higher(Card2) # need to add conditions to check whos card is higher and then take the cards and add to the other player
 
 
-    """if Card1 > Card2:
-        player2.add_card(Card1, Card2)  # Player with the strongest cards wins, other player takes both they're cards from this round
-        points1 += 1  # adding 1 point to track who wins
-        print(player1)  # prints the winning player in this round
-
-    elif Card1 < Card2:
-        player1.add_card(Card1, Card2)  # Player with the strongest cards wins, other player takes both they're cards from this round
-        points2 += 1  # adding 1 point to track who wins
-        print(player2)  # prints the winning player in this round"""
-print(CardGame.get_winner())  # Return the details of the winner
+print(Game1.get_winner())  # Return the details of the winner
