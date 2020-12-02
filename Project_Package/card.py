@@ -14,12 +14,12 @@ class Card:
         else:
             return f" {self.value} of {suits_Translate[self.suit]}"
 
-    def who_higher(self, card2):  # הבדיקה של איזה קלף יותר חזק
-        if self.value > card2.value:  # אם ערך קלף 1 יותר גבוה מערך קלף 2
-            if card2.value == 1:  # בודק אם ערך קלף 2 הוא אס
-                return card2  # אם כן מחזיר לי את הקלף השני
-            return self  # אם קלף 2 לא אס, יחזיר לי את קלף 1
-        elif self.value < card2.value:  # אותה בדיקה בדיוק רק בודק אם הקלף השני גבוה ממנו
+    def who_higher(self, card2):  # Method to check which card is stronger
+        if self.value > card2.value:  # If card 1 is higher than card 2
+            if card2.value == 1:  # Checks if card 2 is an ace, an exception
+                return card2  # and returns him as he is higher
+            return self  # else returns the lower card
+        elif self.value < card2.value:  # same condition as the previous, just opposite scenarios
             if self.value == 1:
                 return self
             return card2
@@ -28,25 +28,25 @@ class Card:
                 return self
             elif self.suit < card2.suit:
                 return card2
-        return "tie"  # אם בסופו של דבר לא קרה כלום וזה הגיע לכאן, משמע הקלפים שווים
+        return "tie"  # If the code gets until this point, its a tie (Equal cards)
 
 
 class DeckOfCards:
     def __init__(self):
-        self.deck = []  # החפיסה עצמה עם כל הקלפים
+        self.deck = []  # The main deck with all of the cards
         for i in range(4):
             for j in range(13):
                 self.deck += [Card(j + 1, i + 1)]
 
-    def shuffle(self):  # מתודה שמערבבת את החפיסה
+    def shuffle(self):  # Method that shuffles the main deck
         random.shuffle(self.deck)
 
-    def deal_one(self, deck=0):  # מתודה שמוציאה קלף רנדומלי מהחפיסה ומחזירה אותו
-        if type(deck) is list:
+    def deal_one(self, deck=None):  # method that picks a random card from a deck of your choice (main one, players..)
+        if type(deck) is list:  # validating that the deck is in fact a list type
             self.deck = deck
-        a = random.choice(self.deck)
-        self.deck.remove(a)
+        a = random.choice(self.deck)  # picking random card
+        self.deck.remove(a)  # removing card from the original deck
         return a
 
-    def show(self):  # מתודה שמדפיסה את החפיסה
+    def show(self):  # prints the card deck
         print(self.deck)

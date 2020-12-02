@@ -1,9 +1,7 @@
-from random import randint as random
-
-from Project_Package.card import DeckOfCards, Card
+from Project_Package.card import DeckOfCards
 d = DeckOfCards()  # creating an instance of DeckOfCards game to give the player cards from the deck
 class Player:
-   # לא יכול להיות גדול מ26, להוסיף אחרי זה
+   # cant have more than 26 cards each, need to add a condition
     def __init__(self, name, NumOfCards):  #מאתחל את האובייקט ב10 קלפים בתור ברירת מחדל ובשם
         self.NumOfCards = NumOfCards
         self.cardList = []  # The list of card objects
