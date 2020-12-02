@@ -1,8 +1,9 @@
 from Project_Package.card import DeckOfCards
 d = DeckOfCards()  # creating an instance of DeckOfCards game to give the player cards from the deck
+
+
 class Player:
-   # cant have more than 26 cards each, need to add a condition
-    def __init__(self, name, NumOfCards):  #מאתחל את האובייקט ב10 קלפים בתור ברירת מחדל ובשם
+    def __init__(self, name, NumOfCards):  # cant have more than 26 cards each, need to add a condition
         self.NumOfCards = NumOfCards
         self.cardList = []  # The list of card objects
         self.PlayerName = name
@@ -11,10 +12,8 @@ class Player:
         return f"{self.PlayerName}"
 
     def set_hand(self, num_of_cards):
-
         for i in range(num_of_cards):
             self.cardList += [d.deal_one()]  # Adds a random card number to the player deck card from deck Card local variable instance we created
-        print(self.cardList)
 
     def get_card(self):
         return d.deal_one(self.cardList)  # Picking a random card from the deck and returning the value
