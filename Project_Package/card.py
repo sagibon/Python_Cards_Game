@@ -1,21 +1,20 @@
 import random
 
-"""def __eq__(self, other):
-    if self.Card > other.Card:  # need to make a function that handles comparison of card objects outside card class
-            return self"""
+
 class Card:
     def __init__(self, value, suit):  # 1 זה אס (הכי גבוה) ואז כרגיל 2-13 (11-נסיך, 12-מלכה, 13-מלך)
         self.value = value  # נותן ערך הקלף
         self.suit = suit  # נותן צורה לקלף
 
     def __repr__(self):
-        return f"value: {self.value}, suit: {self.suit}"
-
-
-
+        suits_Translate = {1: "Diamond", 2: "Spade", 3: "Heart", 4: "Club"}
+        value_Translate = {1: "Ace", 11: "Jack", 12: "Queen", 13: "King"}
+        if self.value in value_Translate:
+            return f" {value_Translate[self.value]} of {suits_Translate[self.suit]}"
+        else:
+            return f" {self.value} of {suits_Translate[self.suit]}"
 
     def who_higher(self, card2):  # הבדיקה של איזה קלף יותר חזק
-        """אני רוצה לעשות כאן השוואה יותר חכמה, אבל עדיין לא יודע אם זה באמת יותר חכם. צריך לבדוק את העניין. (עם ___eq___ וזה)"""
         if self.value > card2.value:  # אם ערך קלף 1 יותר גבוה מערך קלף 2
             if card2.value == 1:  # בודק אם ערך קלף 2 הוא אס
                 return card2  # אם כן מחזיר לי את הקלף השני
@@ -26,9 +25,9 @@ class Card:
             return card2
         else:
             if self.suit > card2.suit:
-                return card2
-            elif self.suit < card2.suit:
                 return self
+            elif self.suit < card2.suit:
+                return card2
         return "tie"  # אם בסופו של דבר לא קרה כלום וזה הגיע לכאן, משמע הקלפים שווים
 
 
@@ -42,7 +41,7 @@ class DeckOfCards:
     def shuffle(self):  # מתודה שמערבבת את החפיסה
         random.shuffle(self.deck)
 
-    def deal_one(self, deck=0):  # מתודה שמוציאה קלף רנדומלי מהחפיסה ומחזירה אותו פנימה
+    def deal_one(self, deck=0):  # מתודה שמוציאה קלף רנדומלי מהחפיסה ומחזירה אותו
         if type(deck) is list:
             self.deck = deck
         a = random.choice(self.deck)
