@@ -2,7 +2,6 @@ from Project_Package.DeckOfCards import DeckOfCards
 from Project_Package.Player import Player
 DeckClass = DeckOfCards()
 
-
 class CardGame:
 
     def __init__(self, name1, name2, numOfCards=10):
@@ -18,7 +17,6 @@ class CardGame:
         self.flag += 1  # Method callable once, Raise a flag and return it to check later if the method has been called
         self.player1.set_hand(self.numOfCards)   # Player 1 deck initialize through player class
         self.player2.set_hand(self.numOfCards)   # Player 2 deck initialize through player class
-
         return self.flag
 
     def get_winner(self):  # whoever has the less card amount will win
