@@ -3,8 +3,11 @@ d = DeckOfCards()  # creating an instance of DeckOfCards game to give the player
 
 
 class Player:
-    def __init__(self, name, NumOfCards):  # cant have more than 26 cards each, need to add a condition
-        self.NumOfCards = NumOfCards
+    def __init__(self, name, numOfCards):  # cant have more than 26 cards each, need to add a condition
+        if numOfCards > 26 or numOfCards < 1:  # checking number of cards, if not valid
+            print("Cards should be between 1 and 26.")
+            quit()  # stops the script.
+        self.NumOfCards = numOfCards
         self.cardList = []  # The list of card objects
         self.PlayerName = name
 
@@ -23,7 +26,7 @@ class Player:
         self.cardList += [card2]
 
     def show(self):
-        print(f"Player name: {self.PlayerName} \n{self.cardList}")
+        print(f"{self.PlayerName}'s cards: \n{self.cardList}")
 
 
 

@@ -15,14 +15,17 @@ class Card:
             return f" {self.value} of {suits_translate[self.suit]}"
 
     def who_higher(self, card2):  # Method to check which card is stronger
+
         if self.value > card2.value:  # If card 1 is higher than card 2
             if card2.value == 1:  # Checks if card 2 is an ace, an exception
                 return card2  # and returns him as he is higher
             return self  # else returns the lower card
+
         elif self.value < card2.value:  # same condition as the previous, just opposite scenarios
             if self.value == 1:
                 return self
             return card2
+
         else:
             if self.suit > card2.suit:
                 return self
@@ -48,5 +51,8 @@ class DeckOfCards:
         self.deck.remove(a)  # removing card from the original deck
         return a
 
-    def show(self):  # prints the card deck
+    def show(self, deck=None):  # prints the card deck
+
+        if type(deck) is list:  # validating that the deck is in fact a list type
+            self.deck = deck
         print(self.deck)
