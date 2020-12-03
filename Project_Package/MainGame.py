@@ -1,5 +1,5 @@
 from Project_Package.CardGame import CardGame
-from Project_Package.card import DeckOfCards
+from Project_Package.DeckOfCards import DeckOfCards
 
 DeckClass = DeckOfCards()
 MainDeck = DeckClass.deck

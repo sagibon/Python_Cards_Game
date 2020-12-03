@@ -1,4 +1,4 @@
-from Project_Package.card import DeckOfCards
+from Project_Package.DeckOfCards import DeckOfCards
 from Project_Package.Player import Player
 DeckClass = DeckOfCards()
 

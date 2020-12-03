@@ -1,4 +1,4 @@
-from Project_Package.card import DeckOfCards
+from Project_Package.DeckOfCards import DeckOfCards
 d = DeckOfCards()  # creating an instance of DeckOfCards game to give the player cards from the deck
 
 
