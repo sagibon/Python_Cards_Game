@@ -15,13 +15,32 @@ Game1.player1.show()  # Card decks in the start
 Game1.player2.show()
 count_rounds = 0
 
+
 for round in range(10):  # The game will last for 10 rounds
     if len(Game1.player1.cardList) == 0 or len(Game1.player2.cardList) == 0:
         break
     count_rounds += 1
     Card1 = Game1.player1.get_card()  # getting a random card from the player1 deck
     Card2 = Game1.player2.get_card()  # getting a random card from the player2 deck
-    print(f"{Game1.player1}'s card:{Card1}   VS   {Game1.player2}'s card:{Card2}")
+
+    # defining shortcuts for formatting the cards ui:
+    c1v = Card1.value_translate[Card1.value]  # card 1 value
+    c2v = Card2.value_translate[Card2.value]  # card 2 value
+    c1s = Card1.suits_symbols[Card1.suit]  # card 1 suit
+    c2s = Card2.suits_symbols[Card2.suit]  # card 2 suit
+
+    print(f"         {Game1.player1.PlayerName} Card                   {Game1.player2.PlayerName} Card")
+    print(f"""        ┌───────────┐              ┌───────────┐
+        │  {c1v}        │              │  {c2v}        │
+        │           │              │           │
+        │           │              │           │
+        │     {c1s}     │      VS      │     {c2s}     │
+        │           │              │           │
+        │           │              │           │
+        │        {c1v}  │              │        {c2v}  │
+        └───────────┘              └───────────┘
+""")
+    # print(f"{Game1.player1}'s card:{Card1}   VS   {Game1.player2}'s card:{Card2}")
 
     if Card1.who_higher(Card2) == Card1:  # Check who's card is higher and then take the cards - add to the other player
         print(f"{Game1.player1} won the round {round + 1}")

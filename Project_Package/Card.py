@@ -1,18 +1,20 @@
-import random
 
 
 class Card:
     def __init__(self, value, suit):  # 1 זה אס (הכי גבוה) ואז כרגיל 2-13 (11-נסיך, 12-מלכה, 13-מלך)
         self.value = value  # נותן ערך הקלף
         self.suit = suit  # נותן צורה לקלף
+        self.suits_symbols = {1: "\u2666", 2: "\u2660", 3: "\u2665", 4: "\u2663"}
+        # suits_translate = {1: "Diamond", 2: "Spade", 3: "Heart", 4: "Club"}
 
     def __repr__(self):
-        suits_translate = {1: "Diamond", 2: "Spade", 3: "Heart", 4: "Club"}
-        value_translate = {1: "Ace", 11: "Jack", 12: "Queen", 13: "King"}
-        if self.value in value_translate:
-            return f" {value_translate[self.value]} of {suits_translate[self.suit]}"
+        # letters meaning: {A: "Ace", J: "Jack", Q: "Queen", K: "King"}
+        # a dictionary of all the possible card values that will appear on the card
+        self.value_translate = {1: "A", 11: "J", 12: "Q", 13: "K", 2:2,3:3,4:4,5:5,6:6,7:7,8:8,9:9,10:10}
+        if self.value in self.value_translate:
+            return f" {self.value_translate[self.value]} of {self.suits_symbols[self.suit]}"
         else:
-            return f" {self.value} of {suits_translate[self.suit]}"
+            return f" {self.value} of {self.suits_symbols[self.suit]}"
 
     def who_higher(self, card2):  # Method to check which card is stronger
 
