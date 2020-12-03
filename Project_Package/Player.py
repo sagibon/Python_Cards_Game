@@ -26,7 +26,7 @@ class Player:
         self.cardList += [card2]
 
     def show(self):
-        print(f"{self.PlayerName}'s cards: \n{self.cardList}")
+        print(f"{self.PlayerName}'s cards: \n{self.cardList}\n")
 
 
 
