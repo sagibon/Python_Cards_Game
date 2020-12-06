@@ -7,12 +7,13 @@ class Card:
         self.suit = suit  # נותן צורה לקלף
 
     def __repr__(self):
-        suits_translate = {1: "Diamond", 2: "Spade", 3: "Heart", 4: "Club"}
+        suits_translate = {1: "\u2666", 2: "\u2660", 3: "\u2665", 4: "\u2663"}
+        #  1: "Diamond", 2: "Spade", 3: "Heart", 4: "Club"
         value_translate = {1: "Ace", 11: "Jack", 12: "Queen", 13: "King"}
         if self.value in value_translate:
-            return f" {value_translate[self.value]} of {suits_translate[self.suit]}"
+            return f" {suits_translate[self.suit]} {value_translate[self.value]}"
         else:
-            return f" {self.value} of {suits_translate[self.suit]}"
+            return f" {suits_translate[self.suit]} {self.value}"
 
     def who_higher(self, card2):  # Method to check which card is stronger
 
