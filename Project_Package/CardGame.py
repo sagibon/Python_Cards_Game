@@ -2,6 +2,7 @@ from Project_Package.DeckOfCards import DeckOfCards
 from Project_Package.Player import Player
 DeckClass = DeckOfCards()
 
+
 class CardGame:
 
     def __init__(self, name1, name2, numOfCards=10):
@@ -20,11 +21,11 @@ class CardGame:
         return self.flag
 
     def get_winner(self):  # whoever has the less card amount will win
-
-        if len(self.player1.cardList) < len(self.player2.cardList):  # if player 1 has less cards returns him as the winner
+        # if player 1 has less cards returns him as the winner
+        if len(self.player1.cardList) < len(self.player2.cardList):
             return self.player1
-
-        elif len(self.player1.cardList) > len(self.player2.cardList):  # if player 1 has less cards returns him as the winner
+        # if player 1 has less cards returns him as the winner
+        elif len(self.player1.cardList) > len(self.player2.cardList):
             return self.player2
 
         else:  # if they have an equal amount of cards returns None

@@ -15,8 +15,9 @@ class Player:
         return f"{self.PlayerName}"
 
     def set_hand(self, num_of_cards):
+        # Adds a random card number to the player deck card from deck Card local variable instance we created
         for i in range(num_of_cards):
-            self.cardList += [d.deal_one()]  # Adds a random card number to the player deck card from deck Card local variable instance we created
+            self.cardList += [d.deal_one()]
 
     def get_card(self):
         return d.deal_one(self.cardList)  # Picking a random card from the deck and returning the value

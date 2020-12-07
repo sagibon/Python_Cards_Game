@@ -1,5 +1,6 @@
 from Project_Package.CardGame import CardGame
 from Project_Package.DeckOfCards import DeckOfCards
+from Project_Package.PrintCard import PrintCard
 
 DeckClass = DeckOfCards()
 MainDeck = DeckClass.deck
@@ -31,26 +32,18 @@ for Round in range(10):  # The game will last for 10 rounds
     c2v = Card2.value_translate[Card2.value]  # card 2 value
     c1s = Card1.suits_symbols[Card1.suit]  # card 1 suit
     c2s = Card2.suits_symbols[Card2.suit]  # card 2 suit
-
-    print(f"         {Game1.player1.PlayerName} Card                   {Game1.player2.PlayerName} Card")
-    print(f"""        ┌───────────┐              ┌───────────┐
-        │  {c1v}        │              │  {c2v}        │
-        │           │              │           │
-        │           │              │           │
-        │     {c1s}     │      VS      │     {c2s}     │
-        │           │              │           │
-        │           │              │           │
-        │        {c1v}  │              │        {c2v}  │
-        └───────────┘              └───────────┘
-""")
-    # print(f"{Game1.player1}'s card:{Card1}   VS   {Game1.player2}'s card:{Card2}")
+    # Printing the players names above the cards:
+    print(f"                     {Game1.player1.PlayerName} Card                   {Game1.player2.PlayerName} Card")
+    PrintCard(c1v, c1s, c2v, c2s)  # Prints the cards with print card class
 
     if Card1.who_higher(Card2) == Card1:  # Check who's card is higher and then take the cards - add to the other player
-        print(f"{Game1.player1} won the {Round + 1} round\n-----------------------------------------------------")
+        print(f"{Game1.player1} won the {Round + 1} round\n----------------------------------------------------------"
+              f"----------------------------------------")
         Game1.player2.add_card(Card1, Card2)
 
     elif Card1.who_higher(Card2) == Card2:
-        print(f"{Game1.player2} won the {Round + 1} round\n-----------------------------------------------------")
+        print(f"{Game1.player2} won the {Round + 1} round\n----------------------------------------------------------"
+              f"----------------------------------------")
         Game1.player1.add_card(Card1, Card2)
 
     else:  # Third option - Returns that its a tie
