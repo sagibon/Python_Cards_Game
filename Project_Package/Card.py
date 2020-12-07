@@ -2,6 +2,17 @@
 
 class Card:
     def __init__(self, value, suit):  # 1 זה אס (הכי גבוה) ואז כרגיל 2-13 (11-נסיך, 12-מלכה, 13-מלך)
+        try:
+            if value > 13 or value < 1:
+                raise ValueError()
+        except ValueError:
+            print("This card value is out of range, need card value between 1 and 13 included")
+        try:
+            if suit > 4 or suit < 1:
+                raise ValueError()
+        except ValueError:
+            print("suit should be between 1 and 4, this suit value is out of range")
+
         self.value = value  # נותן ערך הקלף
         self.suit = suit  # נותן צורה לקלף
         self.suits_symbols = {1: "\u2666", 2: "\u2660", 3: "\u2665", 4: "\u2663"}

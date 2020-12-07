@@ -7,10 +7,13 @@ MainDeck = DeckClass.deck
 try:  # if a is not a number
     a = int(input("enter a number of cards: "))
     Game1 = CardGame("Sagi", "Adi", a)  # Initializing the game with two players and cards for each one
-except ValueError:  # start the game on default mode
+except ValueError:  # start the game on default mode with 10 cards
     Game1 = CardGame("Sagi", "Adi")
 
-Game1.new_game()
+if Game1.new_game() != 1:  # Checking if the game already started or not
+    print("Game already started")
+else:  # If not starts game
+    Game1.new_game()
 Game1.player1.show()  # Card decks in the start
 Game1.player2.show()
 count_rounds = 0
@@ -18,7 +21,7 @@ count_rounds = 0
 
 for Round in range(10):  # The game will last for 10 rounds
     if len(Game1.player1.cardList) == 0 or len(Game1.player2.cardList) == 0:
-        break
+        break  # wont play if one of the players has 0 cards in his deck
     count_rounds += 1
     Card1 = Game1.player1.get_card()  # getting a random card from the player1 deck
     Card2 = Game1.player2.get_card()  # getting a random card from the player2 deck

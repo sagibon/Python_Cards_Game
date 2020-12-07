@@ -14,13 +14,16 @@ class DeckOfCards:
 
     def deal_one(self, deck=None):  # method that picks a random card from a deck of your choice (main one, players..)
         if type(deck) is list:  # validating that the deck is in fact a list type
+            for i in deck:
+                if type(i) != Card:
+                    print("Need a list of cards")
+                    quit()
             self.deck = deck
         a = random.choice(self.deck)  # picking random card
         self.deck.remove(a)  # removing card from the original deck
         return a
 
     def show(self, deck=None):  # prints the card deck
-
         if type(deck) is list:  # validating that the deck is in fact a list type
             self.deck = deck
         print(self.deck)
