@@ -13,14 +13,10 @@ class TestCard(TestCase):
 
     def test_who_higher(self):
         # Checking illegal values
-        self.card3 = Card(0, 3)  # Checking illegal values
-        self.assertRaises(ValueError)
-        self.card4 = Card(1, 5)   # Checking illegal suits
-        self.assertRaises(ValueError)
-        print("Checking both illegal suits and values:")
-        self.card5 = Card(-1, 15)
-        self.assertRaises(ValueError)
-
+        with self.assertRaises(ValueError):
+            self.card3 = Card(0, 3)
+        with self.assertRaises(ValueError):
+            self.card4 = Card(1, 5)
         self.card2 = Card(1, 3)
         self.assertEqual(self.card1.who_higher(self.card2), self.card2)
         self.card2 = Card(2, 3)
