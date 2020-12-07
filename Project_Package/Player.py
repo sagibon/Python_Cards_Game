@@ -1,5 +1,5 @@
 from Project_Package.DeckOfCards import DeckOfCards
-d = DeckOfCards()  # creating an instance of DeckOfCards game to give the player cards from the deck
+  # creating an instance of DeckOfCards game to give the player cards from the deck
 
 
 class Player:
@@ -7,6 +7,7 @@ class Player:
         if numOfCards > 26 or numOfCards < 1:  # checking number of cards, if not valid
             print("Cards should be between 1 and 26.")
             quit()  # stops the script.
+        self.d = DeckOfCards()
         self.NumOfCards = numOfCards
         self.cardList = []  # The list of card objects
         self.PlayerName = name
@@ -17,10 +18,10 @@ class Player:
     def set_hand(self, num_of_cards):
         # Adds a random card number to the player deck card from deck Card local variable instance we created
         for i in range(num_of_cards):
-            self.cardList += [d.deal_one()]
+            self.cardList += [self.d.deal_one()]
 
     def get_card(self):
-        return d.deal_one(self.cardList)  # Picking a random card from the deck and returning the value
+        return self.d.deal_one(self.cardList)  # Picking a random card from the deck and returning the value
 
     def add_card(self, card1, card2):
         self.cardList += [card1]
