@@ -5,11 +5,11 @@ DeckClass = DeckOfCards()
 
 class CardGame:
 
-    def __init__(self, name1, name2, numOfCards=10):
+    def __init__(self, name1, name2, num_of_cards=10):
         self.flag = 0  # flag to check if I can call the new_game method
-        self.numOfCards = numOfCards
-        self.player1 = Player(name1, numOfCards)  # initialising player objects for a new game
-        self.player2 = Player(name2, numOfCards)  # initialising player objects for a new game
+        self.numOfCards = num_of_cards
+        self.player1 = Player(name1, num_of_cards)  # initialising player objects for a new game
+        self.player2 = Player(name2, num_of_cards)  # initialising player objects for a new game
         self.cardDeck = DeckClass.deck  # Initializing a deck card for both players, that why we multiply by 2
 
     def new_game(self):

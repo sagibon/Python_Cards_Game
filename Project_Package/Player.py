@@ -1,14 +1,14 @@
 from Project_Package.DeckOfCards import DeckOfCards
-  # creating an instance of DeckOfCards game to give the player cards from the deck
+# creating an instance of DeckOfCards game to give the player cards from the deck
 
 
 class Player:
-    def __init__(self, name, numOfCards):  # cant have more than 26 cards each, need to add a condition
-        if numOfCards > 26 or numOfCards < 1:  # checking number of cards, if not valid
+    def __init__(self, name, num_of_cards):  # cant have more than 26 cards each, need to add a condition
+        if num_of_cards > 26 or num_of_cards < 1:  # checking number of cards, if not valid
             print("Cards should be between 1 and 26.")
             quit()  # stops the script.
         self.d = DeckOfCards()
-        self.NumOfCards = numOfCards
+        self.NumOfCards = num_of_cards
         self.cardList = []  # The list of card objects
         self.PlayerName = name
 
