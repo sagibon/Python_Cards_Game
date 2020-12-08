@@ -7,7 +7,7 @@ class TestCardGame(TestCase):
         self.test_game = CardGame('sagi', 'adi')
         # Checking the names are right
         self.assertEqual(self.test_game.player1.PlayerName, 'sagi')
-        self.assertEqual(self.test_game.player1.PlayerName, 'adi')
+        self.assertEqual(self.test_game.player2.PlayerName, 'adi')
         print('setUP')
 
     def tearDown(self):
